@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VidGenie | AI Growth Engine for YouTube Creators</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#370086",
+                        "background": "#0e0e0e",
+                        "on-surface-variant": "#adaaaa",
+                        "on-error-container": "#ffb2b9",
+                        "primary": "#ba9eff",
+                        "error-container": "#a70138",
+                        "on-secondary": "#260069",
+                        "on-secondary-container": "#d7c8ff",
+                        "surface-container-lowest": "#000000",
+                        "on-secondary-fixed": "#3c1989",
+                        "secondary-dim": "#a88cfb",
+                        "on-tertiary-fixed": "#380018",
+                        "on-primary": "#39008c",
+                        "on-tertiary-fixed-variant": "#701039",
+                        "surface-container-highest": "#262626",
+                        "primary-fixed-dim": "#a27cff",
+                        "surface": "#0e0e0e",
+                        "on-primary-fixed": "#000000",
+                        "on-surface": "#ffffff",
+                        "error": "#ff6e84",
+                        "tertiary-dim": "#f0779d",
+                        "surface-container": "#1a1919",
+                        "inverse-primary": "#6e3bd7",
+                        "on-tertiary": "#6a0934",
+                        "on-error": "#490013",
+                        "surface-dim": "#0e0e0e",
+                        "on-secondary-fixed-variant": "#593ca6",
+                        "secondary-container": "#4f319c",
+                        "surface-container-low": "#131313",
+                        "surface-variant": "#262626",
+                        "surface-tint": "#ba9eff",
+                        "secondary-fixed": "#d8caff",
+                        "tertiary-fixed-dim": "#f67ca3",
+                        "secondary-fixed-dim": "#ccbaff",
+                        "outline": "#777575",
+                        "primary-fixed": "#ae8dff",
+                        "tertiary-fixed": "#ff8eb0",
+                        "tertiary-container": "#fd81a8",
+                        "tertiary": "#ff97b5",
+                        "error-dim": "#d73357",
+                        "on-background": "#ffffff",
+                        "primary-container": "#ae8dff",
+                        "surface-container-high": "#201f1f",
+                        "on-tertiary-container": "#59002a",
+                        "on-primary-container": "#2b006e",
+                        "outline-variant": "#494847",
+                        "secondary": "#a88cfb",
+                        "inverse-on-surface": "#565554",
+                        "inverse-surface": "#fcf8f8",
+                        "surface-bright": "#2c2c2c",
+                        "primary-dim": "#8455ef"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #ffffff; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(38, 38, 38, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(73, 72, 71, 0.15);
+        }
+        .purple-glow {
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.08);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.15) 0%, rgba(14, 14, 14, 0) 60%);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ba9eff, #8455ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#262626]/60 backdrop-blur-3xl shadow-[0_20px_40px_rgba(139,92,246,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-white uppercase font-headline">VidGenie</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight text-[#BA9EFF] border-b-2 border-[#BA9EFF] pb-1" href="#">Features</a>
+<a class="font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight text-[#ADAAAA] hover:text-white transition-colors" href="#">How It Works</a>
+<a class="font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight text-[#ADAAAA] hover:text-white transition-colors" href="#">FAQ</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-bold text-sm hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300 active:scale-95">
+                Join Waitlist
+            </button>
+</div>
+</nav>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative hero-gradient px-8 pt-20 pb-32">
+<div class="max-w-6xl mx-auto text-center space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 mb-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant font-label">Now in Private Beta</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline tracking-tight leading-[1.1]">
+                    The AI Growth Engine for <br/>
+<span class="text-gradient">YouTube Creators</span>
+</h1>
+<p class="max-w-2xl mx-auto text-on-surface-variant text-lg md:text-xl font-light">
+                    Automate your production workflow, optimize for the algorithm, and scale your channel 10x faster with our suite of creator-first AI tools.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4 pt-4">
+<button class="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-xl shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:scale-105 transition-transform">
+                        Join the Waitlist
+                    </button>
+<button class="w-full md:w-auto px-8 py-4 bg-surface-container-highest/50 border border-primary/20 hover:bg-surface-container-highest transition-colors font-bold rounded-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+                        See How It Works
+                    </button>
+</div>
+<!-- Mockup Dashboard -->
+<div class="mt-20 relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-2xl group-hover:opacity-100 transition duration-1000"></div>
+<div class="relative glass-card rounded-2xl p-4 overflow-hidden shadow-2xl">
+<img class="w-full rounded-lg opacity-90 border border-outline-variant/10" data-alt="Futuristic AI video analytics dashboard interface with purple accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwgz8U-3nBJf0HfVafrk7c7r6TMgP3KvzNQQ9t9gJPkE99q13Cuv4SIOUqalCbl0_IkoBL3hBZFS3mbxCjHUkCRiqggOkfxqOQJ6jlZrcFEdo0T1EfEtRv6EWL8wPBlOHQfnPfjUAI-aRn0WEmg28-lgBNODUG0s8i-eXXZPNPmBrhAEsEPvpaN7iUPgYrgp_xS7Y4MABnlUFOFYFlBh5DTpNCuOYNYuBZrIse8z2kOLHquQWHiVqoXbmb8S3uCIPZUlG1MRVSdUxY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-40"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem vs Solution -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs font-label">The Challenge</span>
+<h2 class="text-4xl font-headline font-bold leading-tight">Creation shouldn't be a chore.</h2>
+<p class="text-on-surface-variant">Most creators spend 80% of their time on tasks that don't grow their channel. Scripting, SEO, and manual editing are the bottlenecks of the creator economy.</p>
+<div class="space-y-4 pt-4">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-highest/20 border-l-2 border-error-dim">
+<span class="material-symbols-outlined text-error-dim">cancel</span>
+<div>
+<h4 class="font-bold text-sm">Low Engagement</h4>
+<p class="text-xs text-on-surface-variant">Struggling to hook viewers in the first 30 seconds.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-highest/20 border-l-2 border-error-dim">
+<span class="material-symbols-outlined text-error-dim">sentiment_dissatisfied</span>
+<div>
+<h4 class="font-bold text-sm">SEO Confusion</h4>
+<p class="text-xs text-on-surface-variant">Hidden by the algorithm due to poor titles and tags.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
+<div class="glass-card p-8 rounded-2xl relative space-y-6">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">magic_button</span>
+<span class="font-bold font-headline">The VidGenie Solution</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 bg-primary/10 rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">AI-Driven Script Optimization</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-primary/10 rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">Auto-Generated Viral Shorts</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-primary/10 rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">Predictive Thumbnail Scoring</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-32 px-8">
+<div class="max-w-6xl mx-auto space-y-16">
+<div class="text-center space-y-4">
+<h2 class="text-4xl font-headline font-bold">Built for Total Mastery</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Every tool you need to research, create, and optimize your content in one unified platform.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Feature 1 -->
+<div class="md:col-span-8 glass-card p-8 rounded-2xl flex flex-col justify-between group overflow-hidden">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">image</span>
+</div>
+<h3 class="text-2xl font-bold font-headline">Thumbnail Generator &amp; AI Scorer</h3>
+<p class="text-on-surface-variant text-sm max-w-md">Generate high-CTR thumbnails and get an AI predicted click-through score before you even upload.</p>
+</div>
+<div class="mt-8 transition-transform group-hover:scale-105 duration-500">
+<img class="rounded-xl border border-outline-variant/10" data-alt="AI generated YouTube thumbnails on a grid with performance scores" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvpowUqdZyW-rXFEIRbIqXMEsjRrivUr0z61as7dZplaf8Vf3uOEVN9EzJz4apA8xKXb4vFy7t8OeYKHkMgpLsyxuxH1MhjSq2eujN9A20cjxT1BL9tYZHSbenD4gGYBYdszrwTpVry94HM_FJX6TPUqC0MlCPr862U9OKJ-wNOAJJKauBtAEOvxvjEUqvUod2n7x8CxFexgZGjBiMI6ethneT4KEK3ivQ41GFaGJIeJls5iNJQ5ITAIXAl2s1WYUU95M5j_xenv9T"/>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-4 glass-card p-8 rounded-2xl space-y-4 bg-gradient-to-br from-primary/5 to-transparent">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">movie_edit</span>
+</div>
+<h3 class="text-xl font-bold font-headline">Shorts Generator</h3>
+<p class="text-on-surface-variant text-sm">Turn any long-form video into viral portrait clips automatically using AI scene detection.</p>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-4 glass-card p-8 rounded-2xl space-y-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h3 class="text-xl font-bold font-headline">AI Script Writer</h3>
+<p class="text-on-surface-variant text-sm">Scripts optimized for retention, featuring psychological hooks and seamless transitions.</p>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-4 glass-card p-8 rounded-2xl space-y-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<h3 class="text-xl font-bold font-headline">Keyword Tool</h3>
+<p class="text-on-surface-variant text-sm">Real-time search volume and competition analysis directly from YouTube's API.</p>
+</div>
+<!-- Feature 5 -->
+<div class="md:col-span-4 glass-card p-8 rounded-2xl space-y-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<h3 class="text-xl font-bold font-headline">AI Creator Coach</h3>
+<p class="text-on-surface-variant text-sm">Personalized feedback on your channel's growth and niche-specific advice 24/7.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-32 px-8 bg-surface-container-lowest">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-20 space-y-4">
+<h2 class="text-4xl font-headline font-bold">The 4-Step Magic</h2>
+<p class="text-on-surface-variant">From spark to viral sensation in minutes.</p>
+</div>
+<div class="grid md:grid-cols-4 gap-8 relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<div class="relative space-y-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border border-primary/30 flex items-center justify-center mx-auto text-primary relative z-10 shadow-[0_0_20px_rgba(139,92,246,0.2)]">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<h4 class="font-bold text-lg">Enter Idea</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Tell VidGenie your video concept or topic niche.</p>
+</div>
+<div class="relative space-y-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border border-primary/30 flex items-center justify-center mx-auto text-primary relative z-10">
+<span class="material-symbols-outlined">assignment</span>
+</div>
+<h4 class="font-bold text-lg">AI Plans</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">We generate scripts, titles, and research data.</p>
+</div>
+<div class="relative space-y-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border border-primary/30 flex items-center justify-center mx-auto text-primary relative z-10">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</div>
+<h4 class="font-bold text-lg">Generate Assets</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Thumbnails, tags, and AI voiceovers ready in one click.</p>
+</div>
+<div class="relative space-y-6 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border border-primary/30 flex items-center justify-center mx-auto text-primary relative z-10">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<h4 class="font-bold text-lg">Grow Faster</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Publish and watch the AI optimize for performance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-20 px-8">
+<div class="max-w-6xl mx-auto glass-card rounded-3xl p-12 grid md:grid-cols-3 gap-12 text-center border-primary/10">
+<div class="space-y-2">
+<div class="text-4xl font-black font-headline text-primary">85%</div>
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Time Saved</p>
+</div>
+<div class="space-y-2 border-x border-outline-variant/10">
+<div class="text-4xl font-black font-headline text-primary">2.4x</div>
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Higher CTR</p>
+</div>
+<div class="space-y-2">
+<div class="text-4xl font-black font-headline text-primary">12k+</div>
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Creators Waiting</p>
+</div>
+</div>
+</section>
+<!-- Waitlist Section -->
+<section class="py-32 px-8 relative overflow-hidden">
+<div class="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-full h-full bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="max-w-3xl mx-auto text-center space-y-8 relative z-10">
+<h2 class="text-4xl md:text-5xl font-headline font-bold">Ready to transcend?</h2>
+<p class="text-on-surface-variant text-lg">Be among the first creators to test the app. Exclusive early-access benefits for waitlist members.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto p-2 rounded-2xl bg-surface-container-high border border-outline-variant/20 shadow-xl">
+<input class="flex-1 bg-transparent border-none focus:ring-0 px-4 py-3 text-sm" placeholder="Enter your email address" required="" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all active:scale-95" type="submit">
+                        Join Beta
+                    </button>
+</form>
+<p class="text-[10px] text-on-surface-variant/60 uppercase tracking-widest">No credit card required. Launching Fall 2024.</p>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 px-8 bg-surface-container-low/50">
+<div class="max-w-4xl mx-auto space-y-12">
+<div class="text-center space-y-4">
+<h2 class="text-3xl font-headline font-bold">Common Questions</h2>
+</div>
+<div class="grid gap-4">
+<div class="glass-card p-6 rounded-2xl">
+<h4 class="font-bold mb-2">Is VidGenie only for new YouTubers?</h4>
+<p class="text-sm text-on-surface-variant">Not at all. While beginners find it easiest to start with, established channels use our AI Scorer and Analytics to squeeze more performance out of every upload.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl">
+<h4 class="font-bold mb-2">When is the official launch?</h4>
+<p class="text-sm text-on-surface-variant">We are currently in a closed alpha. Public beta is scheduled to roll out in late Q3 2024. Waitlist members get prioritized entry.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl">
+<h4 class="font-bold mb-2">How does the pricing work?</h4>
+<p class="text-sm text-on-surface-variant">We will offer a tiered subscription model including a free forever plan for casual creators and pro plans for full-time production teams.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] w-full py-12 px-8 border-t border-[#494847]/15">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-[1440px] mx-auto">
+<div class="space-y-4 text-center md:text-left">
+<div class="text-lg font-bold text-white font-headline">VidGenie</div>
+<p class="text-[10px] uppercase tracking-[0.1em] text-[#ADAAAA]">Built by NovaBuild Studios</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#ADAAAA] text-xs uppercase tracking-[0.1em] hover:text-[#BA9EFF] transition-colors" href="#">Twitter</a>
+<a class="text-[#ADAAAA] text-xs uppercase tracking-[0.1em] hover:text-[#BA9EFF] transition-colors" href="#">YouTube</a>
+<a class="text-[#ADAAAA] text-xs uppercase tracking-[0.1em] hover:text-[#BA9EFF] transition-colors" href="#">Contact</a>
+<a class="text-[#ADAAAA] text-xs uppercase tracking-[0.1em] hover:text-[#BA9EFF] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#ADAAAA] text-xs uppercase tracking-[0.1em] hover:text-[#BA9EFF] transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="text-[10px] text-[#ADAAAA] uppercase tracking-widest opacity-60">
+                © 2024 VidGenie AI. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
